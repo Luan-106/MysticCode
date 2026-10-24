@@ -1,56 +1,43 @@
-# GLITCH//SHIFT: DON'T LOOK BACK
+# GLITCH//SHIFT: DON'T LOOK BACK — Godot prototype
 
-**Studio:** MysticCode | **Engine:** Unreal Engine 5.8 | **Genre:** First-Person Psychological Horror | **Platform:** Windows PC
+A Godot 4.x GDScript horror-platformer jam prototype with a seven-stage run and rising difficulty. The Godot project is in `outputs/GLITCH_SHIFT_GODOT`. The earlier Unity project remains untouched in `outputs/GLITCH_SHIFT`.
 
-## Pitch
-You awaken inside an abandoned research facility after an experiment called PROJECT NULL destroys the boundary between reality and a corrupted parallel state. The facility has lost power. Security systems are malfunctioning. Hallways change when you shift between realities. Something called SUBJECT 0 escaped containment.
+## Run
 
-You must restore the facility's power, discover what happened, solve environmental puzzles, avoid Subject 0, and escape before the corrupted reality consumes the facility.
+1. Install and open **Godot 4.x** and choose **Import** in the Project Manager.
+2. Select this folder (the one containing `project.godot`). Use the Compatibility renderer if prompted; the project is configured for it.
+3. Let Godot finish scanning scripts, then run the project with **F6/F5** or the top-right Play button. `scenes/the_forgotten_facility.tscn` is configured as the main scene.
 
-> **Core rule: Reality can change. Subject 0 can hunt you. Looking back may be your last mistake.**
+## Opening story
 
-## Core Mechanics
-- **Reality Shift (Q):** Toggle between Normal and Corrupted reality — different paths, objects, danger
-- **Flashlight (F):** Toggleable light source, essential in dark areas
-- **Interact (E):** Use doors, keycards, notes, relays, keypads
-- **Sprint (Left Shift):** Faster movement, limited stamina
+An animated comic-book PROJECT NULL prologue plays before the first level, using the supplied ten-panel storyboard. Panels slide and pop into comic frames, with typewritten narration, impact lettering, rain, and brief reality-glitch flashes. Press **Enter/Space** or click to reveal/advance; press **Esc** to skip. Restart Run replays the introduction.
 
 ## Controls
-| Action | Key |
-|--------|-----|
-| Move | WASD |
-| Look | Mouse |
-| Sprint | Left Shift |
-| Interact | E |
-| Flashlight | F |
-| Reality Shift | Q |
-| Jump | Space |
-| Crouch | C |
-| Pause | Escape |
 
-## Level Overview
-1. **Facility** — Tutorial: awakening, flashlight, first notes, Reality Shift introduction
-2. **Wrong Floor** — Reality shift puzzle, alternate routes, first power relay
-3. **Subject 0 Area** — Enemy encounter, power restoration puzzle (3 relays total)
-4. **Don't Look Back** — Final corridor, keycode puzzle, escape sequence
+- A/D or Left/Right: move
+- Space, W or Up: jump; release early for a shorter jump
+- Shift: dash
+- J or left mouse button: melee attack
+- Q: switch Stable/Corrupted reality
+- E: interact with the nearest item
+- Escape: pause/resume
 
-## Unreal Engine Version
-**Unreal Engine 5.8**
+## Play through
 
-## How to Open and Run
-1. Install Unreal Engine 5.8 via Epic Games Launcher
-2. Open: `MysticCode.uproject`
-3. Or run: `LaunchEditor.bat`
-4. Click **Play** in the Unreal Editor
-5. For Blueprint setup: run `Scripts/auto_setup.py` via Tools → Execute Python Script
-6. Full setup guide: see `MANUAL_SETUP.md`
+Collect each amber fuse, then use **E** at the corresponding teal relay. Restore all three relays, then walk into the emergency exit to advance automatically through seven stages. A run loss resets you to stage 1 and clears that stage's objectives. Each stage adds hazards; later stages add faster, more perceptive Subject 0 pursuers. Reach Project Null Core (stage 7) to escape. Use **Q** to reveal the corrupted bridge and the stepwell stairs. The switch is refused if a newly appearing platform or hazard would overlap the player. The red marker records a checkpoint, but a full run loss returns you to stage 1. **Restart Run** also resets to stage 1. Subject 0 patrols, detects and chases the player, then attacks within range. Pursuit speed and detection range rise by stage, and additional Subject 0 encounters appear later.
 
-## Build Status
-See `DEVELOPMENT_LOG.md` for current implementation status.
+## Current implementation
 
-## Team Credits
-- **MysticCode** — Game Jam Development Team
-- **Engine:** Epic Games Unreal Engine 5.8
+- `scenes/the_forgotten_facility.tscn`: main scene reused to generate seven distinct stages, with the current title and difficulty shown in the HUD.
+- `scenes/player.tscn`, `subject_zero.tscn`, `platform.tscn`, `hazard.tscn`, `interactable.tscn`, and `hud.tscn` are reusable scenes.
+- `scripts/player`: buffered jump, coyote time, variable jump, dash, wall slide/jump, melee overlap, knockback, health and invulnerability.
+- `scripts/reality`: stable/corrupted platform and hazard activation with an overlap safety check before shifting.
+- `scripts/enemies`: Subject 0 patrol/chase/attack/recovery states.
+- `scripts/interactables`: fuses, fuse-gated relays, checkpoint, research record, and exit.
+- `scripts/core`: shared run state and level layout/background.
+- `scripts/ui`: animated comic prologue, health/objective/reality HUD, interaction prompt, pause, death, restart, and victory overlays.
+- Each stage has its own route geometry, fuse/relay placements, hazards, and architectural motif; a new run seed shifts routes and objectives so layouts vary without reusing a chapter layout within that run. A full-screen monsoon industrial panorama sits behind the corridor from ceiling to floor, with rain, flickering lights, bilingual warning paint, and stage-specific architecture. The player and Subject 0 use four-frame walk cycles derived from the supplied concept art; the player switches to the walk cycle while moving, and Subject 0 uses it while patrolling or chasing. Their idle, jump, attack, and dash poses retain procedural motion. Rain/intercom/metal motifs still need audio.
 
-## Repository
-https://github.com/Luan-106/MysticCode
+## Validation status
+
+Godot 4.7.2 was used to load the project and launch the main scene. The GDScript constructor errors found during startup were fixed. See `TestingReport.md` for the checks performed and remaining gameplay verification.

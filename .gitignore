@@ -1,43 +1,4 @@
-# Unreal Engine 5 — .gitignore
-# For: GLITCH//SHIFT: DON'T LOOK BACK by MysticCode
-
-# ===== GENERATED / BINARY FILES (DO NOT TRACK) =====
-Binaries/
-Intermediate/
-Saved/
-DerivedDataCache/
-Build/
-
-# ===== IDE AND EDITOR TEMP FILES =====
-.vs/
+.godot/
+.export/
 *.tmp
-*.swp
-*.swo
-*~
-.idea/
-*.suo
-*.user
-*.sdf
-*.opensdf
-*.vcxproj
-*.vcxproj.user
-*.dbg
-
-# ===== OS TEMP =====
-Thumbs.db
-Desktop.ini
-.DS_Store
-
-# ===== MUST BE TRACKED (DO NOT IGNORE) =====
-# .uproject          — project file
-# Config/            — engine/game/input configuration
-# Content/           — ALL game assets including .uasset files
-# Plugins/           — custom plugins if any
-# Scripts/           — editor automation scripts
-# *.md               — documentation
-# *.bat              — launcher scripts
-# LaunchEditor*.bat  — editor launchers
-
-# NOTE: .uasset files are Unreal Blueprint/Asset binary files
-# They MUST be tracked in git for the game to work.
-# Do NOT add *.uasset to this gitignore.
+*.log
