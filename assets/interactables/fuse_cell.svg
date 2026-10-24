@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="112" viewBox="0 0 96 112">
+<defs>
+  <linearGradient id="case" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#74bdb0"/><stop offset=".48" stop-color="#275d60"/><stop offset="1" stop-color="#10252b"/></linearGradient>
+  <linearGradient id="cap" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e2bd84"/><stop offset="1" stop-color="#8b6343"/></linearGradient>
+  <radialGradient id="soft"><stop stop-color="#ffb950" stop-opacity=".22"/><stop offset="1" stop-color="#ffb950" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="48" cy="57" rx="39" ry="43" fill="url(#soft)"/>
+<rect x="29" y="8" width="38" height="96" rx="17" fill="#08161b" stroke="#71938a" stroke-width="2.5"/>
+<rect x="34" y="15" width="28" height="82" rx="13" fill="url(#case)"/>
+<rect x="34" y="11" width="28" height="8" rx="3" fill="url(#cap)"/>
+<rect x="34" y="93" width="28" height="8" rx="3" fill="url(#cap)"/>
+<rect x="42" y="31" width="12" height="46" rx="6" fill="#ffb653" opacity=".84"/>
+<rect x="44" y="34" width="4" height="40" rx="2" fill="#fff0b8" opacity=".7"/>
+</svg>
