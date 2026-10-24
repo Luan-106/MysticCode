@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="96" viewBox="0 0 128 96">
+<defs>
+  <linearGradient id="case" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#59706d"/><stop offset=".2" stop-color="#263b3d"/><stop offset="1" stop-color="#111f23"/></linearGradient>
+  <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#aff0df"/><stop offset="1" stop-color="#3eaaa2"/></linearGradient>
+  <radialGradient id="soft"><stop stop-color="#48dfd0" stop-opacity=".17"/><stop offset="1" stop-color="#48dfd0" stop-opacity="0"/></radialGradient>
+</defs>
+<ellipse cx="64" cy="49" rx="58" ry="41" fill="url(#soft)"/>
+<rect x="15" y="9" width="98" height="78" rx="9" fill="#0b1519" stroke="#829c94" stroke-width="3"/>
+<rect x="21" y="15" width="86" height="66" rx="6" fill="url(#case)"/>
+<rect x="30" y="25" width="54" height="38" rx="4" fill="#101e22" stroke="#87aaa0" stroke-width="2"/>
+<rect x="34" y="29" width="46" height="30" rx="2" fill="url(#glass)"/>
+<path d="M40 47h8l5-8 6 12 5-7h9" fill="none" stroke="#e6fff1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="94" cy="34" r="5" fill="#ffd17a"/>
+<circle cx="94" cy="53" r="5" fill="#55d8c7"/>
+<path d="M39 75h50" stroke="#71877f" stroke-width="3" stroke-linecap="round"/>
+</svg>

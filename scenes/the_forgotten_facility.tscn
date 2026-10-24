@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dth1paod2qjha"]
+
+[ext_resource type="Script" uid="uid://c468xsvxb73is" path="res://scripts/core/level.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
+
+[node name="TheForgottenFacility" type="Node2D" unique_id=121600288]
+script = ExtResource("1")
+
+[node name="Player" parent="." unique_id=237444645 instance=ExtResource("2")]
+position = Vector2(100, 500)
